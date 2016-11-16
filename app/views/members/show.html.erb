@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Member address:</strong>
+  <%= @member.member_address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @member.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Money owed:</strong>
+  <%= @member.money_owed %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @member.Branch_id %>
+  
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

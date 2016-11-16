@@ -1,0 +1,1 @@
+json.array! @borroweds, partial: 'borroweds/borrowed', as: :borrowed

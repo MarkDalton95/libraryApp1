@@ -1,0 +1,1 @@
+json.partial! "borroweds/borrowed", borrowed: @borrowed

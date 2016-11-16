@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @book.available %>
+</p>
+
+<p>
+  <strong>Book image:</strong>
+  <%= image_tag(@book.book_image, :alt=> "Image not displaying!") %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @book.Branch_id %>
+</p>
+
+<h2>Rating and comment:</h2>
+	<%= form_for([@book, Comment.new]) do |f| %>
+	
+	  <h3><%= f.label :rating %>
+		<% rating = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
+		<% rating.each do |rating| %>
+				<%= f.radio_button :rating, rating %> <%= rating %>
+		<% end %>
+	  </h3></br>
+	  <%= f.text_area :content, :rows => 4, :cols => 40 %>
+	  <div class="actions">
+				<%= f.submit "Post a comment" %>
+	  </div>
+<% end %>
+
+<% if @book.comments.empty? %>
+		<h3>You are the first comment</h3>
+<% else %>
+		<h2>What others felt about this:</h2>
+		<% @book.comments.reverse.each do |comment| %>
+				<p><%= comment.content %>
+				 was posted <%= time_ago_in_words(comment.created_at) %> ago by
+				<%= comment.member.name %></p>
+		<% end %>
+		<h3>Rating</h3>
+		<p>
+				<%= number_with_precision( @book.average_rating, precision:0) %>
+		</p>
+<% end %>
+	
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

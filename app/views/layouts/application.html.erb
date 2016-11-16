@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LibraryApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="banner">
+		<%=image_tag("library.jpg",:size => "140x100")%>
+		<%="Libary"%>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><%=link_to "Home", root_path %></li>
+		<li><%=link_to "Books", books_path %></li>
+		<li><%=link_to "Branches", branches_path %></li>
+		<li><%=link_to "Members", members_path %></li>
+	</ul>
+	<ul>
+		<% if !signed_in? %>
+				<li><%= link_to "Sign In", login_path %></li>
+		<% else %>
+				<li>Signed in as <%= @current_member.name %></li>
+				<li><%= link_to "Sign out", logout_path %></li>
+		<% end %>
+	</ul>
+</div>
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

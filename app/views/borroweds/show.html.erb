@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @borrowed.return_date %>
+</p>
+
+<p>
+  <strong>Date due:</strong>
+  <%= @borrowed.date_due %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @borrowed.Member_id %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @borrowed.Book_id %>
+</p>
+
+<%= link_to 'Edit', edit_borrowed_path(@borrowed) %> |
+<%= link_to 'Back', borroweds_path %>
