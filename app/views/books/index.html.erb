@@ -1,5 +1,5 @@
 <h1>Listing books</h1>
-
+<h2>Search by the title of the book, similar results will be displayed</h2>
 	<%= form_tag books_path, :method => 'get' do %>
 		<%= text_field_tag :search, params[:search] %>
 		<%= submit_tag "Search" %>
