@@ -28,6 +28,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
+		MemberMailer.signup_confirmation(@member).deliver
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
         format.json { render :show, status: :created, location: @member }
       else
