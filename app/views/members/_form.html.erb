@@ -35,7 +35,10 @@
     <%= f.label :Branch_id %><br>
     <%= f.collection_select :Branch_id, Branch.all, :id, :address %>
   </div>
+	<%= f.label :attachment %>
+	<%= f.file_field :attachment %>
   <div class="actions">
     <%= f.submit %>
   </div>
+	
 <% end %>

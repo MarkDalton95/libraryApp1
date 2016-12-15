@@ -24,6 +24,8 @@
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
         <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+	  <th>Show image</th>
+		<td><%= link_to "Show image", member.attachment_url %></td>
     <% end %>
   </tbody>
 </table>

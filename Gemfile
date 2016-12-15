@@ -45,3 +45,5 @@ gem 'autoprefixer-rails'
 gem 'coffee-script-source', '1.8.0'
 
 gem 'geocoder'
+
+gem 'carrierwave'

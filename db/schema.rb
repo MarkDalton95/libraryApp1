@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214211614) do
+ActiveRecord::Schema.define(version: 20161215004145) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161214211614) do
     t.integer  "Branch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachment"
   end
 
 end
